@@ -2,7 +2,7 @@
 
 In this project I try out custom react hooks. Hooks will be in hooks directory, examples in components directory. Enjoy.
 
-## Hooks Done
+## Hooks Done:
 
 ### useToggle
 Simple hook that lets you toggle between boolean states, true or false
