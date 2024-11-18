@@ -4,6 +4,7 @@ import { HookUseIntervalExample } from './components/HookUseIntervalExample';
 import { HookUseTimeoutExample } from './components/HookUseTimeoutExample';
 import { HookUseBooleanExample } from './components/HookUseBooleanExample';
 import { HookUseRenderCountExample } from './components/HookUseRenderCountExample';
+import { HookUseOnceExample } from './components/HookUseOnceExample';
 import './App.css';
 //uncomment false to see hook in action
 function App() {
@@ -15,6 +16,7 @@ function App() {
       {true && <HookUseTimeoutExample/>}
       {true && <HookUseBooleanExample/>}
       {true && <HookUseRenderCountExample/>}
+      {true && <HookUseOnceExample/>}
     </div>
   );
 }
