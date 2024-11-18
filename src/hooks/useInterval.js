@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 export function useInterval(callback, delay){
 
     const callbackRef = useRef();
+    const intervalID = useRef(null);
 
     useEffect(() => {
         callbackRef.current = callback;
@@ -13,8 +14,15 @@ export function useInterval(callback, delay){
           callbackRef.current();
         }
         if (delay !== null) {
-          let id = setInterval(tick, delay);
-          return () => clearInterval(id);
+          intervalID.current = setInterval(tick, delay);
+          return () => clearInterval(intervalID.current);
         }
       }, [delay]);
+
+    const stopIntervalNow = () => {
+        clearInterval(intervalID.current);
+        intervalID.current = null;
+    }
+
+    return stopIntervalNow;
 };
