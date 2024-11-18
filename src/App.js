@@ -1,5 +1,6 @@
 import { HookUseToggleExample } from './components/HookUseToggleExample';
 import { HookUsePrevExample } from './components/HookUsePrevExample';
+import { HookUseIntervalExample } from './components/HookUseIntervalExample';
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <HookUseToggleExample />
       <HookUsePrevExample />
+      <HookUseIntervalExample/>
     </div>
   );
 }
