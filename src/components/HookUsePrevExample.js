@@ -7,7 +7,8 @@ function HookUsePrevExample(){
     return (
         <>
         <p>Count: {count}</p>
-        <p>Previous count: {prev}</p>
+        <p>Previous count: {prev === undefined ? 'None' : prev}</p>
+        <button onClick={() => setCount(prev => prev + 1)}>Increment</button>
         </>
     );
 };
