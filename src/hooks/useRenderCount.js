@@ -1,8 +1,14 @@
 import { useEffect, useRef } from "react";
 export function useRenderCount(){
-    const count = useRef(0)
+    const count = useRef(1)
+    const rendered = useRef(false);
+    
     useEffect(() => {
-        count.current = count.current + 1;
+        if(rendered.current === false){
+            rendered.current = true;
+            return;
+        }
+        count.current++;
     })
     return count.current;
 };
