@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       {false && <HookUseToggleExample />}
       {false && <HookUsePrevExample /> }
-      {false && <HookUseIntervalExample/>}
+      {true && <HookUseIntervalExample/>}
     </div>
   );
 }

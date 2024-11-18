@@ -5,7 +5,7 @@ function HookUseIntervalExample(){
 
     useInterval(() => {
         setCount(prev => prev + 1);
-    }, 1000);
+    }, count < 10 ? 1000 : null);
 
     return (
     <>
