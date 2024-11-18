@@ -69,3 +69,45 @@ export function useInterval(callback, delay){
 };
 ```
 
+### useTimeout
+
+That was pretty challenging. You can reset timeout (start timeout again with this delay) or clear timeout (cancel).
+You can also change the delay or callback passed as props.
+React useCallback hook ensures referential integrity so that only "real" change of callback will be noticed.
+Kind of complicated, but you can understand it.
+
+```js
+import { useEffect, useRef, useCallback } from "react";
+
+export function useTimeout(cb, delay){
+
+    const cbRef = useRef(cb);
+    const timeoutRef = useRef();
+
+    useEffect(() => {
+        cbRef.current = cb
+      }, [cb]);
+    
+    const set = useCallback(() => {
+        timeoutRef.current = setTimeout(() => cbRef.current(), delay)
+      }, [delay])
+    
+    const clear = useCallback(() => {
+        timeoutRef.current && clearTimeout(timeoutRef.current)
+      }, [])
+    
+
+      useEffect(() => {
+        set()
+        return clear
+      }, [delay, set, clear])
+    
+      const reset = useCallback(() => {
+        clear()
+        set()
+      }, [clear, set])
+    
+    return { reset, clear }
+}
+```
+
