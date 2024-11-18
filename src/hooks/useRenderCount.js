@@ -1,4 +1,8 @@
 import { useEffect, useRef } from "react";
 export function useRenderCount(){
-    return "not implemented";
+    const count = useRef(0)
+    useEffect(() => {
+        //todo: logic
+    })
+    return count.current;
 };
