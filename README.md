@@ -131,3 +131,21 @@ export function useBoolean(reactiveVariable){
 };
 ```
 
+### useRenderCount
+Simple hook that shows render count, it is a little tricky
+```js
+import { useEffect, useRef } from "react";
+export function useRenderCount(){
+    const count = useRef(1)
+    const rendered = useRef(false);
+    
+    useEffect(() => {
+        if(rendered.current === false){
+            rendered.current = true;
+            return;
+        }
+        count.current++;
+    })
+    return count.current;
+};
+```
