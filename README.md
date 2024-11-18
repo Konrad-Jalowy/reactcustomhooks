@@ -149,3 +149,15 @@ export function useRenderCount(){
     return count.current;
 };
 ```
+
+### useOnce
+I dont like that hook, there is missing dependency problem. Basically it would be better to write such things inside components.
+
+Anyways, here it is:
+```js
+import { useEffect } from "react";
+
+export function useOnce(cb){
+    useEffect(cb, []);
+};
+```
