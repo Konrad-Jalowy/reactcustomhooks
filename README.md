@@ -161,3 +161,19 @@ export function useOnce(cb){
     useEffect(cb, []);
 };
 ```
+
+### useFirstRender
+Another hook from the web, it uses use effect and the fact, that useRef persists between re-renders, but change of ref does not trigger re-render (its actually smart practical use of React built-in hooks)
+```js
+import { useRef, useEffect } from "react";
+
+export const useFirstRender = () => {
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    firstRender.current = false;
+  }, []);
+
+  return firstRender.current;
+};
+```
