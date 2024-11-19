@@ -10,7 +10,7 @@ export default function useClickOutside(ref, cb) {
 
   useEffect(() => {
     const handler = e => {
-        if(ref.curren === null || ref.current.contains(e.target)) return;
+        if(ref.current === null || ref.current.contains(e.target)) return;
         callbackRef.current(e);
     } 
     document.addEventListener('click', handler)
