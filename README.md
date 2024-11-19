@@ -215,3 +215,30 @@ export default function useArray(defaultValue){
       return { arr, set: setArr, push, filter, update, remove, clear };
 };
 ```
+
+
+### useEventListener
+Great hook, i like separation of things (callback and evt + setter separately) and the idea of storing a callback in ref.current
+```js
+import { useEffect, useRef } from "react"
+
+export default function useEventListener(
+  evtType,
+  cb,
+  el = window
+) {
+  const callbackRef = useRef(cb)
+
+  useEffect(() => {
+    callbackRef.current = cb
+  }, [cb])
+
+  useEffect(() => {
+    if (el == null) return
+    const handler = e => callbackRef.current(e)
+    el.addEventListener(evtType, handler)
+
+    return () => el.removeEventListener(evtType, handler)
+  }, [evtType, el]);
+}
+```
