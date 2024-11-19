@@ -9,6 +9,7 @@ import HookUseFirstRenderExample from './components/HookUseFirstRenderExample';
 import HookUseArrayExample from './components/HookUseArrayExample';
 import HookUseEventListenerExample from './components/HookUseEventListenerExample';
 import { HookUseHoverExample } from './components/HookUseHoverExample';
+import { ClickOutside } from './components/HookUseClickOutsideExample';
 import './App.css';
 //uncomment false to see hook in action
 function App() {
@@ -25,6 +26,7 @@ function App() {
       {true && <HookUseArrayExample/>}
       {true && <HookUseEventListenerExample/>}
       {true && <HookUseHoverExample/>}
+      {true && <ClickOutside/>}
     </div>
   );
 }
