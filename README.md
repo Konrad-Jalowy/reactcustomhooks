@@ -272,3 +272,28 @@ export const useHover = (ref) => {
     return isHovered;
 };
 ```
+
+### useClickOutside hook
+Tbh it can be really usefull
+```js
+import { useEffect, useRef } from "react"
+
+export default function useClickOutside(ref, cb) {
+
+  const callbackRef = useRef(cb)
+
+  useEffect(() => {
+    callbackRef.current = cb
+  }, [cb])
+
+  useEffect(() => {
+    const handler = e => {
+        if(ref.curren === null || ref.current.contains(e.target)) return;
+        callbackRef.current(e);
+    } 
+    document.addEventListener('click', handler)
+
+    return () => document.removeEventListener('click', handler)
+  }, [ref]);
+}
+```
