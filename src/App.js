@@ -8,6 +8,7 @@ import { HookUseOnceExample } from './components/HookUseOnceExample';
 import HookUseFirstRenderExample from './components/HookUseFirstRenderExample';
 import HookUseArrayExample from './components/HookUseArrayExample';
 import HookUseEventListenerExample from './components/HookUseEventListenerExample';
+import { HookUseHoverExample } from './components/HookUseHoverExample';
 import './App.css';
 //uncomment false to see hook in action
 function App() {
@@ -23,6 +24,7 @@ function App() {
       {true && <HookUseFirstRenderExample/>}
       {true && <HookUseArrayExample/>}
       {true && <HookUseEventListenerExample/>}
+      {true && <HookUseHoverExample/>}
     </div>
   );
 }
