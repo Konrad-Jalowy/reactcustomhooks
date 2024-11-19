@@ -5,6 +5,7 @@ import { HookUseTimeoutExample } from './components/HookUseTimeoutExample';
 import { HookUseBooleanExample } from './components/HookUseBooleanExample';
 import { HookUseRenderCountExample } from './components/HookUseRenderCountExample';
 import { HookUseOnceExample } from './components/HookUseOnceExample';
+import HookUseFirstRenderExample from './components/HookUseFirstRenderExample';
 import './App.css';
 //uncomment false to see hook in action
 function App() {
@@ -12,11 +13,12 @@ function App() {
     <div className="App">
       {false && <HookUseToggleExample />}
       {false && <HookUsePrevExample /> }
-      {true && <HookUseIntervalExample/>}
-      {true && <HookUseTimeoutExample/>}
-      {true && <HookUseBooleanExample/>}
-      {true && <HookUseRenderCountExample/>}
-      {true && <HookUseOnceExample/>}
+      {false && <HookUseIntervalExample/>}
+      {false && <HookUseTimeoutExample/>}
+      {false && <HookUseBooleanExample/>}
+      {false && <HookUseRenderCountExample/>}
+      {false && <HookUseOnceExample/>}
+      {true && <HookUseFirstRenderExample/>}
     </div>
   );
 }
