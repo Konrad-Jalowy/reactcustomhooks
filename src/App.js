@@ -6,6 +6,7 @@ import { HookUseBooleanExample } from './components/HookUseBooleanExample';
 import { HookUseRenderCountExample } from './components/HookUseRenderCountExample';
 import { HookUseOnceExample } from './components/HookUseOnceExample';
 import HookUseFirstRenderExample from './components/HookUseFirstRenderExample';
+import HookUseArrayExample from './components/HookUseArrayExample';
 import './App.css';
 //uncomment false to see hook in action
 function App() {
@@ -19,6 +20,7 @@ function App() {
       {false && <HookUseRenderCountExample/>}
       {false && <HookUseOnceExample/>}
       {true && <HookUseFirstRenderExample/>}
+      {true && <HookUseArrayExample/>}
     </div>
   );
 }
